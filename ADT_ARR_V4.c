@@ -24,6 +24,23 @@ int main(){
     List myList;
     List* L = &myList;
     initialize(L);
+
+    insertPos(L, 'A', 0);
+    insertPos(L, 'C', 1);
+    insertPos(L, 'E', 2);
+    display(L);
+
+    insertSorted(L,'B');
+    insertSorted(L,'D');
+    display(L);
+
+    int find = locate(L,'A');
+    find = locate(L,'F');
+    find = retrieve(L, 0);
+    find = retrieve(L, 5);
+
+    makeNull(L);
+    display(L);
     return 0;
 }
 
