@@ -23,9 +23,9 @@ int main(){
     display(L);
 
     //insertPos
-    L = insertPos(L, 'A', 1);
-    L = insertPos(L, 'C', 2);
-    L = insertPos(L, 'F', 3);
+    L = insertPos(L, 'A', 0);
+    L = insertPos(L, 'C', 1);
+    L = insertPos(L, 'F', 2);
     display(L);
 
     //inSort
@@ -69,7 +69,7 @@ List insertPos(List L, char data, int pos){
 
 List deletePos(List L, int pos){
     if(pos >= L.count){
-        printf("Invalid Position");
+        printf("Invalid Position.\n");
     }else{
         for(int i = pos; i < L.count-1; i++){
             L.elemPtr[i] = L.elemPtr[i+1];
@@ -90,7 +90,7 @@ int locate(List L, char data){
 
 List insertSorted(List L, char data){
     int i;
-    for(i = 0; L.elemPtr[i] < data && i < L.count; i++){ }
+    for(i = 0; i < L.count && L.elemPtr[i] < data; i++){ }
     return insertPos(L, data, i);
 }
 
@@ -105,7 +105,7 @@ void display(List L){
                 }
             }
         }else{
-            printf("List is Empty.");
+            printf("List is Empty.\n");
     }
 }
 
